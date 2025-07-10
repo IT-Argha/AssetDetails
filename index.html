@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asset Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="login-page" class="login-container">
+        <div class="login-form">
+            <h2>Asset Management System</h2>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter password">
+            </div>
+            <button class="btn" id="login-btn">Login</button>
+            <div class="error-message" id="login-error">Invalid username or password</div>
+        </div>
+    </div>
+
+    <!-- Main App -->
+    <div id="main-app" class="container hidden">
+        <div class="header">
+            <h1>Asset Management System</h1>
+            <button class="theme-toggle" id="theme-toggle">🌓</button>
+        </div>
+
+        <div class="search-container">
+            <div class="search-field">
+                <label for="search-by">Search By</label>
+                <select id="search-by">
+                    <option value="all">All Fields</option>
+                    <!-- Options will be populated from Google Sheets -->
+                </select>
+            </div>
+            <div class="search-input">
+                <label for="search-input">Search Value</label>
+                <div class="search-input-wrapper">
+                    <input type="text" id="search-input" placeholder="Enter search term...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="filter-container">
+            <div class="filter-header">
+                <h3><i class="fas fa-cog"></i> Select Fields to Display</h3>
+                <button class="toggle-fields-btn" id="toggle-fields-btn">
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+            <div class="field-checkboxes-container" id="field-checkboxes-container">
+                <div class="field-checkboxes" id="field-checkboxes">
+                    <!-- Fields will be added dynamically by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <div class="results-info">
+            <div id="result-count">0 results found</div>
+            <button class="export-btn" id="export-btn"><i class="fas fa-file-export"></i> Export CSV</button>
+        </div>
+
+        <div class="cards-container" id="cards-container">
+            <!-- Cards will be added dynamically by JavaScript -->
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
